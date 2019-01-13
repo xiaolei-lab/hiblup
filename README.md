@@ -95,4 +95,4 @@ LiLin Yin#, Haohao Zhang#, and **Xiaolei Liu**[_(Email)_](mailto:xiaoleiliu@mail
 
 ## Availability
 
-The HIBLUP is distributed as R package (https://hiblup.github.io/) and is free of charge for research purposes. The use of HIBLUP for academic purposes is free, please contact the development team for commercial purposes.
+The HIBLUP is distributed as R package (https://hiblup.github.io/) and is free of charge for academic purposes. For commercial purposes, please contact the development team.
