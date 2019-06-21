@@ -92,8 +92,7 @@ HIBLUP ACCOMPLISHED SUCCESSFULLY!
 
 ## Authors
 
-[Lilin Yin](https://github.com/YinLiLin)#, [Haohao Zhang](https://github.com/hyacz)#, and [**Xiaolei Liu**](https://github.com/XiaoleiLiuBio).
-
+[Lilin Yin#](https://github.com/YinLiLin), [Haohao Zhang#](https://github.com/hyacz), and [**Xiaolei Liu**](https://github.com/XiaoleiLiuBio).</br>
 Questions, suggestions, and bug reports are welcome and appreciated: [xiaoleiliu@mail.hzau.edu.cn](mailto:xiaoleiliu@mail.hzau.edu.cn)
 
 ## Availability
