@@ -1,6 +1,6 @@
 # HIBLUP
 
-HIBLUP is an user-friendly R package that provides estimated genetic value of each individual by maximizing the usage of information from pedigree records, genome, and phenotype, as well as all process-related functions, such as construction of relationship matrix and estimation of variance components, are also implemented.
+HIBLUP is an user-friendly R package that provides estimated genetic value of each individual by maximizing the usage of information from pedigree records, genome, and phenotype, as well as all process-related functions, such as construction of relationship matrix, estimation of variance components with various algorithms, and estimation of SNP effects, are also implemented.
 
 ## Features
 
@@ -12,6 +12,7 @@ HIBLUP is an user-friendly R package that provides estimated genetic value of ea
   - Singe K model
   - Multiple K model
   - Pairs of correlated traits
+  - Repeated records traits
 - LMM Framework
   - BLUP
   - A/DBLUP
