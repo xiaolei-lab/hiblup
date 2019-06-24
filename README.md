@@ -21,7 +21,7 @@ HIBLUP is an user-friendly R package that provides estimated genetic value of ea
 
 ## Installation
 
-It is highly recommended to install [Microsoft R Open](https://mran.microsoft.com/download/) to speed up the mathematical calculation of HIBLUP, but this is not required, and HIBLUP can also work with base R. HIBLUP can be easily installed using the following codes:
+It is highly recommended to install [Microsoft R Open](https://mran.microsoft.com/download/) to speed up the mathematical calculation of HIBLUP, it includes multi-threaded math libraries. These libraries make it possible for so many common R operations, ***such as matrix multiply/inverse, matrix decomposition, and some higher-level matrix operations***, to compute in parallel and use all of the processing power available to [reduce computation times](https://mran.microsoft.com/documents/rro/multithread/#mt-bench), but this is not required, and HIBLUP can also work with base R. HIBLUP can be easily installed using the following codes:
 
 ```R
 install.packages("Rcpp")
