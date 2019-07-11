@@ -15,9 +15,9 @@ HIBLUP(He-aI BLUP) is an user-friendly R package that provides estimated genetic
   - Repeated records traits
 - LMM Framework
   - BLUP
-  - A/DBLUP
-  - GBLUP
-  - SSBLUP
+  - Pedigree BLUP(PBLUP)
+  - Genomic BLUP(GBLUP)
+  - Single-step BLUP(SSBLUP)
 
 ## Installation
 
