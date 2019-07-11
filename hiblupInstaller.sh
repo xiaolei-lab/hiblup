@@ -6,16 +6,34 @@
 MIRROR="tuna"
 
 # getopts
-while getopts "d:" opt; do
+while getopts "d:m:k" opt; do
     case $opt in
         d)
-            CONDA_PREFIX=$OPTARG
+            if [[ -z ${CONDA_PREFIX} ]]; then
+                mkdir -p $OPTARG
+                INSTALL_PATH=$(cd "$OPTARG" && pwd)
+            else
+                echo "Warning: CONDA_PREFIX found, -d is ignored."
+                echo "CONDA_PREFIX: ${CONDA_PREFIX}"
+            fi
             ;;
         m)
             MIRROR=$OPTARG
             ;;
+        k)
+            CURL_OPT="-k"
+            ;;
         \?)
-            echo "./hiblupInstaller.sh [-d <conda_prefix>] [-m 'tuna'|'official']"
+            echo ""
+            echo "./hiblupInstaller.sh [-d <install_path>] [-m 'tuna'|'official'] [-k]"
+            echo "Usage:"
+            echo "    -d : Specify the conda installation path. If a conda is detected, this option"
+            echo "         will be ignored. (default: ~/miniconda3)"
+            echo "    -m : Specify the mirror source, which can be 'tuna' or 'official'. Users in"
+            echo "         mainland China recommend 'tuna'. Users in other regions can use"
+            echo "         'official'. (default: tuna)"
+            echo "    -k : turn off curl's verification of the certificate."
+            echo ""
             ;;
     esac
 done
@@ -56,15 +74,15 @@ cd $TMP_DIR
 
 # Install Miniconda3
 if [[ ! $(command -v conda) ]]; then
-    if [[ -z "${CONDA_PREFIX}" ]]; then
-        CONDA_PREFIX=~/miniconda3
+    if [[ -z "${INSTALL_PATH}" ]]; then
+        INSTALL_PATH=~/miniconda3
     fi
     echo "Warning: conda is not installed." >&2
-    echo "Installing miniconda3 into ${CONDA_PREFIX}..."
-    curl -O ${CONDA_MIRROR}/${CONDA_INSTALLER}
-    bash ${CONDA_INSTALLER} -b -p ${CONDA_PREFIX}
+    echo "Installing miniconda3 into ${INSTALL_PATH}..."
+    curl ${CURL_OPT} -O ${CONDA_MIRROR}/${CONDA_INSTALLER}
+    bash ${CONDA_INSTALLER} -f -u -b -p ${INSTALL_PATH}
 
-    export PATH="${CONDA_PREFIX}/bin:$PATH"
+    export PATH="${INSTALL_PATH}/bin:$PATH"
     
     conda init bash
     conda config --set auto_activate_base false
@@ -118,12 +136,12 @@ conda activate hiblup
 # Install hiblup
 echo ""
 echo "Downloading HIBLUP from https://raw.githubusercontent.com/hiblup/hiblup/master/${HIBLUP_PACKAGE} ..."
-curl -O https://raw.githubusercontent.com/hiblup/hiblup/master/${HIBLUP_PACKAGE}
+curl ${CURL_OPT} -O https://raw.githubusercontent.com/hiblup/hiblup/master/${HIBLUP_PACKAGE}
 
 echo ""
 echo "Installing HIBLUP ..."
-Rscript -e "install.packages('bigmemory', repos='${CRAN_MIRROR}')"
-Rscript -e "install.packages('${HIBLUP_PACKAGE}', repos=NULL)"
+Rscript -e "install.packages('bigmemory', repos='${CRAN_MIRROR}', lib='${CONDA_PREFIX}/lib/R/library')"
+Rscript -e "install.packages('${HIBLUP_PACKAGE}', repos=NULL, lib='${CONDA_PREFIX}/lib/R/library')"
 
 # R startup script
 STARTUP=""
