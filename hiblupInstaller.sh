@@ -126,7 +126,15 @@ Rscript -e "install.packages('bigmemory', repos='${CRAN_MIRROR}')"
 Rscript -e "install.packages('${HIBLUP_PACKAGE}', repos=NULL)"
 
 # R startup script
+STARTUP=""
+if [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
+STARTUP="
+  suppressMessages(library(RevoUtils))
+  suppressMessages(library(RevoUtilsMath))
+"
+fi
 echo ".First <- function(){
+  ${STARTUP}
   suppressMessages(library(hiblup))
   if('hiblup' %in% (.packages())) {
     # cat('hiblup has been loaded.')
