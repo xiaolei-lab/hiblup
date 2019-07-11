@@ -43,7 +43,7 @@ elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
     CONDA_INSTALLER="Miniconda3-latest-Linux-x86_64.sh"
     HIBLUP_PACKAGE="hiblup_1.2.0_R_3.5.1_community_x86_64_Linux.tar.gz"
     R_VERSION="mro-base=3.5.1"
-    PROFILE="~/.bashrc"
+    PROFILE="${HOME}/.bashrc"
 else
     echo "Error: Unknow OS."
     exit 1
