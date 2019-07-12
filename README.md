@@ -1,6 +1,6 @@
 # HIBLUP
 
-HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated genetic value of each individual by maximizing the usage of information from pedigree records, genome, and phenotype, as well as all process-related functions, such as construction of relationship matrix, estimation of variance components with various algorithms, and estimation of SNP effects, are also implemented.
+HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated genetic value of each individual by maximizing the usage of information from pedigree records, genome, and phenotype, as well as all process-related functions, such as construction of relationship matrix, estimation of variance components with various algorithms, and estimation of SNP effects.
 
 ## Download
 - v1.2.0
@@ -33,7 +33,7 @@ HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated geneti
 $ chmod 755 ./hiblupInstaller.sh
 $ ./hiblupInstaller.sh
 ```
-After installed successfully, restart the terminal or source the system path file, then type `hiblup` to start (needn't to `library(hiblup)`). For R script file (yourscript.r), it can be run directly by `hiblup yourscript.r` instead of `Rscript yourscript.r`
+After installed successfully, restart the terminal or source the system path file, then type `hiblup` to start (the hiblup library will be automatically imported). For R script file (yourscript.r), it can be run directly by `hiblup yourscript.r` instead of `Rscript yourscript.r`
 ### Install on Windows
 ```R
 > install.packages(c("RcppArmadillo", "bigmemory"))
