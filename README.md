@@ -24,6 +24,12 @@ HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated geneti
   - Pedigree BLUP(PBLUP)
   - Genomic BLUP(GBLUP)
   - Single-step BLUP(SSBLUP)
+- Achievement
+  - Variance components
+  - EBV/GEBV
+  - Genetic Correlation
+  - SNP effect
+  - Realiability
 
 ## Installation
 
