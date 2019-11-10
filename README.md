@@ -17,7 +17,7 @@ HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated geneti
 - Variance components estimation ( AI, EM, EMAI, AIEM, HE Regression, and **HI** )
   - Singe K model
   - Multiple K model
-  - Pairs of correlated traits
+  - multiple correlated traits
   - Repeated records traits
 - LMM Framework
   - BLUP
