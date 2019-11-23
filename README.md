@@ -3,10 +3,10 @@
 HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated genetic value of each individual by maximizing the usage of information from pedigree records, genome, and phenotype, as well as all process-related functions, such as construction of relationship matrix, estimation of variance components with various algorithms, and estimation of SNP effects.
 
 ## Download
-- v1.2.0
+- v1.3.0
   - [Linux & macOS Online Installer](https://raw.githubusercontent.com/hiblup/hiblup/master/hiblupInstaller.sh)
-  - [Windows](https://github.com/hiblup/hiblup/raw/master/hiblup_1.2.0.zip)
-  - [User Manual](https://github.com/hiblup/hiblup/raw/master/hiblup-user-manual-v1.2.pdf)
+  - [Windows](https://github.com/hiblup/hiblup/raw/master/version/1.3.0/hiblup_1.3.0.zip)
+  - [User Manual](https://github.com/hiblup/hiblup/raw/master/manual/hiblup-user-manual-v1.3.pdf)
 
 ## Features
 
@@ -17,7 +17,7 @@ HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated geneti
 - Variance components estimation ( AI, EM, EMAI, AIEM, HE Regression, and **HI** )
   - Singe K model
   - Multiple K model
-  - Pairs of correlated traits
+  - multiple correlated traits
   - Repeated records traits
 - LMM Framework
   - BLUP
@@ -43,7 +43,7 @@ After installed successfully, restart the terminal or source the system path fil
 ### Install HIBLUP on Windows
 ```R
 > install.packages(c("RcppArmadillo", "bigmemory"))
-> install.packages("hiblup_1.2.0.zip", repos = NULL)
+> install.packages("hiblup_1.3.0.zip", repos = NULL)
 ```
 After installed successfully, please `library(hiblup)` to start.
 

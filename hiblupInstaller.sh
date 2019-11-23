@@ -2,10 +2,14 @@
 # Author: Haohao Zhang <haohaozhang@whut.edu.cn>
 # Date: Jul 10, 2019
 
-# Default
-MIRROR="tuna"
+# Define
+VERSION="1.3.0"
+R_VERSION="3.5.1"
+MIRROR_DEFAULT="tuna"
+REPO_ROOT="https://raw.githubusercontent.com/hiblup/hiblup/master/version/${VERSION}"
 
 # getopts
+MIRROR=$MIRROR_DEFAULT
 while getopts "d:m:k" opt; do
     case $opt in
         d)
@@ -16,6 +20,12 @@ while getopts "d:m:k" opt; do
                 echo "Warning: CONDA_PREFIX found, -d is ignored."
                 echo "CONDA_PREFIX: ${CONDA_PREFIX}"
             fi
+            ;;
+        r)
+            R_VERSION=$OPTARG
+            ;;
+        v)
+            VERSION=$OPTARG
             ;;
         m)
             MIRROR=$OPTARG
@@ -54,13 +64,13 @@ fi
 # OS
 if [[ "$(uname)" == "Darwin" ]]; then
     CONDA_INSTALLER="Miniconda3-latest-MacOSX-x86_64.sh"
-    HIBLUP_PACKAGE="hiblup_1.2.0_R_3.5.1_community_x86_64_macOS.tar.gz"
-    R_VERSION="r-base=3.5.1"
+    HIBLUP_PACKAGE="hiblup_${VERSION}_R_${R_VERSION}_community_x86_64_macOS.tar.gz"
+    R_ENV="r-base=${R_VERSION}"
     PROFILE="${HOME}/.bash_profile"
 elif [[ "$(expr substr $(uname -s) 1 5)" == "Linux" ]]; then
     CONDA_INSTALLER="Miniconda3-latest-Linux-x86_64.sh"
-    HIBLUP_PACKAGE="hiblup_1.2.0_R_3.5.1_community_x86_64_Linux.tar.gz"
-    R_VERSION="mro-base=3.5.1"
+    HIBLUP_PACKAGE="hiblup_${VERSION}_R_${R_VERSION}_community_x86_64_Linux.tar.gz"
+    R_ENV="mro-base=${R_VERSION}"
     PROFILE="${HOME}/.bashrc"
 else
     echo "Error: Unknow OS."
@@ -130,13 +140,13 @@ if [[ ! $(command -v conda) ]]; then
 fi
 
 # Create or update conda env
-conda create -n hiblup ${R_VERSION} r-essentials r-rcpp r-rcpparmadillo -y
+conda create -n hiblup ${R_ENV} r-essentials r-rcpp r-rcpparmadillo -y
 conda activate hiblup
 
 # Install hiblup
 echo ""
-echo "Downloading HIBLUP from https://raw.githubusercontent.com/hiblup/hiblup/master/${HIBLUP_PACKAGE} ..."
-curl ${CURL_OPT} -O https://raw.githubusercontent.com/hiblup/hiblup/master/${HIBLUP_PACKAGE}
+echo "Downloading HIBLUP from $REPO_ROOT/${HIBLUP_PACKAGE} ..."
+curl ${CURL_OPT} -O $REPO_ROOT/${HIBLUP_PACKAGE}
 
 echo ""
 echo "Installing HIBLUP ..."
