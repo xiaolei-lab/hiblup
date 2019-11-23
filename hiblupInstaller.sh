@@ -6,7 +6,7 @@
 VERSION="1.3.0"
 R_VERSION="3.5.1"
 MIRROR_DEFAULT="tuna"
-REPO_ROOT="https://raw.githubusercontent.com/hiblup/hiblup/master/version/${VERSION}"
+REPO_ROOT="https://raw.githubusercontent.com/xiaolei-lab/hiblup/master/version/${VERSION}"
 
 # getopts
 MIRROR=$MIRROR_DEFAULT
