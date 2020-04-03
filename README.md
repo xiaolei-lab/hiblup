@@ -19,6 +19,7 @@ HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated geneti
   - Multiple K model
   - multiple correlated traits
   - Repeated records traits
+- Mixed model equation solution ( CG, JOR, SOR, and SOLVE )
 - LMM Framework
   - BLUP
   - Pedigree BLUP(PBLUP)
@@ -29,7 +30,6 @@ HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated geneti
   - EBV/GEBV
   - Genetic Correlation
   - SNP effect
-  - Realiability
 
 ## Installation
 
