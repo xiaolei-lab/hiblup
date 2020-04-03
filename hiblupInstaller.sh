@@ -3,7 +3,7 @@
 # Date: Jul 10, 2019
 
 # Define
-VERSION="1.3.0"
+VERSION="1.3.1"
 R_VERSION="3.5.1"
 MIRROR_DEFAULT="tuna"
 REPO_ROOT="https://raw.githubusercontent.com/xiaolei-lab/hiblup/master/version/${VERSION}"
