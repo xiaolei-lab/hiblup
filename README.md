@@ -20,7 +20,7 @@ HIBLUP (He-aI BLUP) is an user-friendly R package that provides estimated geneti
   - Genome based relationship matrix(G matrix)
   - Pedigree and genome based relationship matrix(H matrix)
 - Variance components estimation ( AI, EM, EMAI, AIEM, HE Regression, and **HI** )
-  - Singe K model
+  - Single K model
   - Multiple K model
   - multiple correlated traits
   - Repeated records traits
